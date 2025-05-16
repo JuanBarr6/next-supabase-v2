@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# WebStorm/IntelliJ IDEA
+.idea/
+
 # testing
 /coverage
 
