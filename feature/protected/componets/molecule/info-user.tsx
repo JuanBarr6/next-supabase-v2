@@ -16,9 +16,7 @@ export default function InfoUser({ avatarUrl, name }: NavSectionsProps) {
       />
       <div className="flex flex-col">
         <Label className="text-primary-foreground text-xs">{name}</Label>
-        <span className="text-primary-foreground text-xs">
-          Hello@{name}.com
-        </span>
+        <span className="text-primary-foreground text-xs">Hello@{name}.co</span>
       </div>
       <ChevronDown />
     </section>
