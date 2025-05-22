@@ -41,3 +41,7 @@ export const organizationSections = [
     title: "Organisations Settings",
   },
 ];
+
+
+export const userAvatar = "/placeholder.svg?height=32&width=32";
+export const userName = "Usuario";
