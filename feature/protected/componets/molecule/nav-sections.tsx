@@ -13,4 +13,4 @@ export default function NavSection({ Icon, title }: NavSectionsProps) {
       <Label className="text-primary-foreground">{title}</Label>
     </section>
   );
-}
+} 
