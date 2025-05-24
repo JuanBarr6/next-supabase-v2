@@ -1,14 +1,16 @@
-import NavSection from "@/feature/protected/componets/molecule/nav-sections";
+import NavSection from "../molecule/nav-sections";
 import {
   menuSections,
   organizationSections,
-} from "@/feature/protected/utils/constants/nav-sections";
+} from "../../utils/constants/nav-sections";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import HeadNavBar from "./head";
 
 export default function LateralNavBar() {
   return (
     <div className="w-[200px] h-full p-4  flex flex-col gap-4 bg-primary justify-between">
+      <HeadNavBar />
       <section className="flex flex-col gap-4 ">
         <Label className="text-primary-foreground mt-4">Menu</Label>
         <section className="flex flex-col gap-4 w-full">

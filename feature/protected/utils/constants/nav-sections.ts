@@ -38,6 +38,6 @@ export const organizationSections = [
   },
   {
     Icon: CreditCard,
-    title: "Organisations Settings",
+    title: "Organizations Settings",
   },
 ];
