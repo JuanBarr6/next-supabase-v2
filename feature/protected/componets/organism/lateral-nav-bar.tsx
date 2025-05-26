@@ -6,6 +6,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ProfileInfo from "../molecule/profile-info";
+import ProfileUser from "../molecule/profile-user";
 
 export default function LateralNavBar() {
   return (
@@ -26,6 +27,7 @@ export default function LateralNavBar() {
         </section>
       </section>
       <Button variant="secondary">Create Contract +</Button>
+      <ProfileUser />
     </div>
   );
 }
