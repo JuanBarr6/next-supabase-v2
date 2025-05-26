@@ -42,6 +42,7 @@ export const organizationSections = [
   },
 ];
 
-
 export const userAvatar = "/placeholder.svg?height=32&width=32";
-export const userName = "Usuario";
+export const userName = "Carlos";
+export const userRole = "Admin";
+export const userLocation = "Colombia, Bogotá";
