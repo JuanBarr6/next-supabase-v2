@@ -13,6 +13,7 @@ export default function LateralNavBar() {
       <InfoUser
         avatarUrl="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
         name="John Doe"
+        position="Software Engineer"
       />
       <section className="flex flex-col gap-4 ">
         <Label className="text-primary-foreground mt-4">Menu</Label>
