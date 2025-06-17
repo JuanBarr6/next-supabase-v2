@@ -9,14 +9,8 @@ import { Button } from "@/components/ui/button";
 
 export default function LateralNavBar() {
   return (
-    <div className="w-1/6 h-full p-4  flex flex-col gap-4 bg-primary justify-between">
-      <section className="flex flex-col gap-4 p-4 ">
-        {/*<UserSection*/}
-        {/*  avatar={userAvatar}*/}
-        {/*  name={userName}*/}
-        {/*  role={userRole}*/}
-        {/*  location={userLocation}*/}
-        {/*/>*/}
+    <div className="h-full p-4  flex flex-col gap-4 bg-primary justify-between sm:w-2/5 md:w-1/6">
+      <section className="flex flex-col gap-4 p-4   overflow-y-auto">
         <Label className="text-primary-foreground mt-4">Menu</Label>
         <section className="flex flex-col gap-4 w-full">
           {menuSections.map(({ Icon, title }) => (
