@@ -38,6 +38,30 @@ export const organizationSections = [
   },
   {
     Icon: CreditCard,
-    title: "Organisations Settings",
+    title: "Organizations Settings",
+  },
+];
+
+export const navBarSections = [
+  {
+    title: "My Profile",
+  },
+  {
+    title: "Security",
+  },
+  {
+    title: "Teams",
+  },
+  {
+    title: "Team Member",
+  },
+  {
+    title: "Notifications",
+  },
+  {
+    title: "Billing",
+  },
+  {
+    title: "Data Export",
   },
 ];

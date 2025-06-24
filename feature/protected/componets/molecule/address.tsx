@@ -9,7 +9,7 @@ export default function Address() {
   };
 
   return (
-    <div className="flex justify-between relative items-start w-[700px] ml-[300px] mt-5 p-4 border border-gray-300 rounded-md bg-white shadow-md">
+    <div className="flex justify-between relative items-start w-[700px] ml-[100px] mt-5 p-4 border border-gray-300 rounded-md bg-white shadow-md">
       <div className="flex flex-col text-primary-foreground w-full">
         <Label className="text-lg font-bold text-black text-[16px] mb-4">
           Address

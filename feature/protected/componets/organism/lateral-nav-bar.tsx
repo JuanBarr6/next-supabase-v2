@@ -9,27 +9,23 @@ import ProfileInfo from "../molecule/profile-info";
 
 export default function LateralNavBar() {
   return (
-    <div className="w-[200px] h-[720px] p-4 pb-[50px] flex flex-col justify-between bg-primary ">
-      <div className="flex flex-col gap-4">
-        <ProfileInfo />
-        <section className="flex flex-col gap-4">
-          <Label className="text-primary-foreground mt-4">Menu</Label>
-          <section className="flex flex-col gap-4 w-full">
-            {menuSections.map(({ Icon, title }) => (
-              <NavSection key={title} Icon={Icon} title={title} />
-            ))}
-          </section>
-          <Label className="text-primary-foreground mt-4">Organizations</Label>
-          <section className="flex flex-col gap-4 w-full">
-            {organizationSections.map(({ Icon, title }) => (
-              <NavSection key={title} Icon={Icon} title={title} />
-            ))}
-          </section>
+    <div className="h-full p-4 flex flex-col gap-4 bg-primary justify-between sm:w-2/5 md:w-1/6">
+      <ProfileInfo />
+      <section className="flex flex-col gap-4 p-4 overflow-y-auto">
+        <Label className="text-primary-foreground mt-4">Menu</Label>
+        <section className="flex flex-col gap-4 w-full">
+          {menuSections.map(({ Icon, title }) => (
+            <NavSection key={title} Icon={Icon} title={title} />
+          ))}
         </section>
-      </div>
-      <div className="mt-auto">
-        <Button variant="secondary">Create Contract +</Button>
-      </div>
+        <Label className="text-primary-foreground mt-4">Organizations</Label>
+        <section className="flex flex-col gap-4 w-full">
+          {organizationSections.map(({ Icon, title }) => (
+            <NavSection key={title} Icon={Icon} title={title} />
+          ))}
+        </section>
+      </section>
+      <Button variant="secondary">Create Contract +</Button>
     </div>
   );
 }

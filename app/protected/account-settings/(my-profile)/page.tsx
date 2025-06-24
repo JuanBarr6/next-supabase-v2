@@ -5,7 +5,7 @@ import PersonalInfo from "@/feature/protected/componets/molecule/personal-inform
 export default function MyProfile() {
   return (
     <div className="font-bold">
-      <div className="ml-[300px]">My profile</div>
+      <div className="ml-[100px]">My profile</div>
       <ProfileUser />
       <PersonalInfo />
       <Address />

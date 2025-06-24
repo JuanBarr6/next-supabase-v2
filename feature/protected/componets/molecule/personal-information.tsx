@@ -12,7 +12,7 @@ export default function PersonalInfo() {
   };
 
   return (
-    <div className="flex justify-between items-start w-[700px] ml-[300px] relative mt-5 p-4 border border-gray-300 rounded-md bg-white shadow-md">
+    <div className="flex justify-between items-start w-[700px] ml-[100px] relative mt-5 p-4 border border-gray-300 rounded-md bg-white shadow-md">
       <div className="flex flex-col text-primary-foreground w-full">
         <Label className="text-lg font-bold text-black text-[16px] mb-4">
           Personal Information
