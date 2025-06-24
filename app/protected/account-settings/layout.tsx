@@ -1,5 +1,4 @@
 import { Label } from "@radix-ui/react-label";
-import PersonalInfo from "@/feature/protected/componets/organism/internal-nav-bar";
 import InternalNavBar from "@/feature/protected/componets/organism/internal-nav-bar";
 
 export default function AccountSettings({
