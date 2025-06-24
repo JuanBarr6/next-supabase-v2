@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 
 export default function LateralNavBar() {
   return (
-    <div className="h-full p-4  flex flex-col gap-4 bg-primary justify-between sm:w-2/5 md:w-1/6">
-      <section className="flex flex-col gap-4 p-4   overflow-y-auto">
+    <div className="h-full p-4 flex flex-col gap-4 bg-primary justify-between w-2/6">
+      <section className="flex flex-col gap-4 p-4 scrollbar-none scrollbar overflow-y-auto">
         <Label className="text-primary-foreground mt-4">Menu</Label>
         <section className="flex flex-col gap-4 w-full">
           {menuSections.map(({ Icon, title }) => (
