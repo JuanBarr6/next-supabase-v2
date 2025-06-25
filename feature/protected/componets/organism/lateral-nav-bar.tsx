@@ -1,4 +1,5 @@
 import NavSection from "@/feature/protected/componets/molecule/nav-sections";
+
 import {
   menuSections,
   organizationSections,
@@ -9,9 +10,8 @@ import ProfileInfo from "../molecule/profile-info";
 
 export default function LateralNavBar() {
   return (
-    <div className="w-[200px] h-full p-4  flex flex-col gap-4 bg-primary justify-between">
-      <ProfileInfo />
-      <section className="flex flex-col gap-4 ">
+    <div className="h-full p-4 flex flex-col gap-4 bg-primary justify-between w-2/6">
+      <section className="flex flex-col gap-4 p-4 scrollbar-none scrollbar overflow-y-auto">
         <Label className="text-primary-foreground mt-4">Menu</Label>
         <section className="flex flex-col gap-4 w-full">
           {menuSections.map(({ Icon, title }) => (

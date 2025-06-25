@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col w-full h-full">
       <div className="flex flex-row w-full h-full">
         <LateralNavBar />
-        {children}
+        <div className="flex flex-col w-full h-full p-8 ">{children}</div>
       </div>
     </div>
   );
