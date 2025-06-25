@@ -1,5 +1,4 @@
-import { Label } from "@radix-ui/react-label";
-import InternalNavBar from "@/feature/protected/componets/organism/internal-nav-bar";
+import { Label } from "@/components/ui/label";
 
 export default function AccountSettings({
   children,
@@ -7,10 +6,9 @@ export default function AccountSettings({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex p-8 bg-gray-100 h-[720px] w-full flex-col gap-5">
+    <div className="flex bg-background h-full w-full flex-col gap-5">
       <Label className="text-2xl">Account Settings</Label>
-      <div className="flex h-full p-4 w-full rounded-2xl shadow-md bg-white">
-        <InternalNavBar />
+      <div className="flex  h-full p-4 rounded-2xl flex-row w-full bg-primary">
         {children}
       </div>
     </div>

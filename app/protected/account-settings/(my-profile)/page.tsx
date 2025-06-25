@@ -3,12 +3,11 @@ import ProfileUser from "@/feature/protected/componets/molecule/profile-user";
 import PersonalInfo from "@/feature/protected/componets/molecule/personal-information";
 
 export default function MyProfile() {
-  return (
-    <div className="font-bold">
-      <div className="ml-[100px]">My profile</div>
-      <ProfileUser />
-      <PersonalInfo />
-      <Address />
-    </div>
-  );
+  return;
+  <div className="font-bold">
+    <div className="text-primary-foreground">esto es my MyProfile</div>;
+    <ProfileUser />
+    <PersonalInfo />
+    <Address />
+  </div>;
 }
