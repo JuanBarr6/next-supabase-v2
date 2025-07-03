@@ -14,11 +14,11 @@ export default function AccountSettings({
         <div className="space-y-1 w-[120px]">
           <section className="mt-4 flex flex-col gap-4 w-full">
             {menuSectionsAccountSettings.map(({ title }) => (
-              <AccountSettingSection title={title} />
+              <AccountSettingSection key={title} title={title} />
             ))}
           </section>
         </div>
-        <div className="mt-3 flex h-full p-4 rounded-2xl flex-row w-full bg-primary overflow-y-auto scrollbar-none scrollbar">
+        <div className="mt-3 flex h-[720px] p-4 rounded-2xl flex-row w-full bg-white overflow-y-auto scrollbar-none scrollbar border border-gray-200">
           {children}
         </div>
       </div>

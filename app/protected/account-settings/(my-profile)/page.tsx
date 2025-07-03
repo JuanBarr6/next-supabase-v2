@@ -4,7 +4,7 @@ import { AddressInfo } from "@/feature/protected/componets/sub-features/account-
 export default function MyProfile() {
   return (
     <div className="space-y-1 bg-white w-full">
-      <h1>My Profile</h1>
+      <h1 className="font-bold">My Profile</h1>
       <div className="h-[200px] w-full flex flex-col bg-white text-black  p-4">
         <UserProfile />
         <PersonalInfo />
