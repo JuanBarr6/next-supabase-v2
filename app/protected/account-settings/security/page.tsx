@@ -1,3 +1,3 @@
 export default function Security() {
-  return <div className="text-primary-foreground">esto es Security</div>;
+  return <div className="text-black ml-30">esto es Security</div>;
 }

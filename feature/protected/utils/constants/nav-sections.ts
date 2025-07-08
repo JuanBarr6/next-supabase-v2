@@ -45,24 +45,31 @@ export const organizationSections = [
 export const navBarSections = [
   {
     title: "My Profile",
+    href: "/protected/account-settings",
   },
   {
     title: "Security",
+    href: "/protected/account-settings/security",
   },
   {
     title: "Teams",
+    href: "/protected/account-settings/teams",
   },
   {
     title: "Team Member",
+    href: "/protected/account-settings/team-member",
   },
   {
     title: "Notifications",
+    href: "/protected/account-settings/notifications",
   },
   {
     title: "Billing",
+    href: "/protected/account-settings/billing",
   },
   {
     title: "Data Export",
+    href: "/protected/account-settings/data-export",
   },
 ];
 

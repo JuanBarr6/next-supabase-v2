@@ -1,13 +1,18 @@
-import Address from "@/feature/protected/componets/molecule/address";
-import ProfileUser from "@/feature/protected/componets/molecule/profile-user";
-import PersonalInfo from "@/feature/protected/componets/molecule/personal-information";
+import Address from "@/feature/protected/sub-features/account-settings/my-profile/components/address";
+import ProfileUser from "@/feature/protected/sub-features/account-settings/my-profile/components/profile-user";
+import PersonalInfo from "@/feature/protected/sub-features/account-settings/my-profile/components/personal-information";
 
 export default function MyProfile() {
-  return;
-  <div className="font-bold">
-    <div className="text-primary-foreground">esto es my MyProfile</div>;
-    <ProfileUser />
-    <PersonalInfo />
-    <Address />
-  </div>;
+  return (
+    <div className="font-bold space-y-1">
+      {[...Array(1)].map((_, i) => (
+        <div key={i} className="text-black ml-[100px] h-[200px] w-[200px]">
+          My profile
+          <ProfileUser />
+          <PersonalInfo />
+          <Address />
+        </div>
+      ))}
+    </div>
+  );
 }
