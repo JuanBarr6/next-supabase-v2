@@ -12,22 +12,24 @@ export default function AccountSettings({
   const pathname = usePathname();
 
   return (
-    <div className="flex bg-red-100 h-full w-full flex-col gap-5">
+    <div className="flex bg-white h-full w-full flex-col gap-5">
       <Label className="text-2xl">Account Settings</Label>
-      <div className="flex flex-row gap-10">
-        <div className="space-y-1 w-[120px]">
-          <section className="mt-4 flex flex-col gap-4 w-full">
-            {menuSectionsAccountSettings.map(({ title, rute }) => (
-              <AccountSettingSection
-                key={title}
-                title={title}
-                rute={rute}
-                selected={pathname === rute}
-              />
-            ))}
-          </section>
+      <div className="flex flex-row overflow-y-auto scrollbar-none gap-3">
+        <section className="space-y-1 ">
+          {menuSectionsAccountSettings.map(({ title, rute }) => (
+            <AccountSettingSection
+              key={title}
+              title={title}
+              rute={rute}
+              selected={pathname === rute}
+            />
+          ))}
+        </section>
+        <div className="flex h-full p-4 rounded-2xl flex-row w-full bg-white overflow-y-auto scrollbar-none scrollbar border border-gray-200">
+          {children}
         </div>
-        {/*<div className="space-y-1">  
+      </div>
+      {/*<div className="space-y-1">  
         {[...Array(12)].map((_, i) => (    
         <div key={i}      
             className="h-[200px] w-[200px] bg-[#34367f] text-primary-foreground"    
@@ -37,10 +39,6 @@ export default function AccountSettings({
                 ))}
         </div>
           */}
-        <div className="mt-3 flex h-full p-4 rounded-2xl flex-row w-full bg-white overflow-y-auto scrollbar-none scrollbar border border-gray-200">
-          {children}
-        </div>
-      </div>
     </div>
   );
 }
