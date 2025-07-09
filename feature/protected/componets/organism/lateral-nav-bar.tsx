@@ -1,5 +1,5 @@
 import NavSection from "@/feature/protected/componets/molecule/nav-sections";
-import ProfileInfo from "../../sub-features/account-settings/utils/constants/profile-info";
+import ProfileInfo from "../../sub-features/account-settings/sub-features/utils/constants/profile-info";
 
 import {
   menuSections,
