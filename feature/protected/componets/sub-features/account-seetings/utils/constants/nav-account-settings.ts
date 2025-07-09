@@ -13,7 +13,7 @@ export const menuSectionsAccountSettings = [
   },
   {
     title: "Team member",
-    rute: "/protected/account-settings/team-member",
+    rute: "/protected/account-settings/team-members",
   },
   {
     title: "Notifications",

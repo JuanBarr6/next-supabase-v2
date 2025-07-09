@@ -3,9 +3,9 @@ import { PersonalInfo } from "@/feature/protected/componets/sub-features/account
 import { AddressInfo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/my-profile/components/address-info";
 export default function MyProfile() {
   return (
-    <div className="space-y-1 bg-white w-full">
+    <div className="space-y-1 bg-white w-full h-full">
       <h1 className="font-bold">My Profile</h1>
-      <div className="h-full w-full flex flex-col bg-white text-black  p-4">
+      <div className="w-full flex flex-col bg-white text-black  p-4">
         <UserProfile />
         <PersonalInfo />
         <AddressInfo />
