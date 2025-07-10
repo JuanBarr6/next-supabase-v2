@@ -4,15 +4,13 @@ import PersonalInfo from "@/feature/protected/sub-features/account-settings/sub-
 
 export default function MyProfile() {
   return (
-    <div className="font-bold space-y-1">
-      {[...Array(1)].map((_, i) => (
-        <div key={i} className="text-black">
-          My profile
-          <ProfileUser />
-          <PersonalInfo />
-          <Address />
-        </div>
-      ))}
+    <div className="font-bold space-y-1 ml-10">
+      <div className="text-black">
+        My profile
+        <ProfileUser />
+        <PersonalInfo />
+        <Address />
+      </div>
     </div>
   );
 }

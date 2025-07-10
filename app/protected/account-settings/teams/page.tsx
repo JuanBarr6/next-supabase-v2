@@ -1,4 +1,4 @@
-import TeamsContainer from "@/feature/protected/sub-features/account-settings/teams/components/teams-container";
+import TeamsContainer from "@/feature/protected/sub-features/account-settings/sub-features/teams/components/teams-container";
 
 export default function Teams() {
   return (
