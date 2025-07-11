@@ -9,7 +9,7 @@ export default function ProfileUser() {
   };
 
   return (
-    <div className="flex justify-between items-center w-[700px]  mt-5 relative p-4 border border-gray-300 rounded-md bg-white shadow-md">
+    <div className="flex justify-between items-center w-3/4 mt-5 relative p-4 border border-gray-300 rounded-md bg-white shadow-md">
       <div className="flex gap-4 items-center">
         <Avatar className="w-16 h-16">
           <AvatarImage

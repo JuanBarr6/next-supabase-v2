@@ -11,7 +11,7 @@ export default function AccountSettings({
       <Label className="text-2xl font-bold">Account Settings</Label>
 
       <div className="flex flex-1 rounded-2xl shadow-md bg-white overflow-y-auto">
-        <div className="flex scrollbar-none p-4 bg-white flex-row flex-shrink-0">
+        <div className="flex scrollbar-none p-4 bg-white flex-row">
           <InternalNavBar />
         </div>
 

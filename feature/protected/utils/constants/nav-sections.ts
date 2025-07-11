@@ -49,7 +49,7 @@ export const navBarSections = [
   },
   {
     title: "Security",
-    href: "/protected/account-settings/security",
+    href: "/protected/account-settings/security?from=navbar",
   },
   {
     title: "Teams",
@@ -72,8 +72,3 @@ export const navBarSections = [
     href: "/protected/account-settings/data-export",
   },
 ];
-
-export const userAvatar = "/placeholder.svg?height=32&width=32";
-export const userName = "Carlos";
-export const userRole = "Admin";
-export const userLocation = "Colombia, Bogotá";
