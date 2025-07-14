@@ -8,7 +8,7 @@ export const PersonalInfo = () => {
         <h1 className="text-black font-bold">Personal information</h1>
         <BtnEdit />
       </div>
-      <div className="grid grid-cols-2 gap-x-10 gap-y-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 mt-6">
         <div>
           <p className="text-sm text-gray-500">First Name</p>
           <p className="font-semibold">Rofiqur</p>
@@ -29,7 +29,7 @@ export const PersonalInfo = () => {
           <p className="font-semibold">+09 345 346 46</p>
         </div>
 
-        <div className="col-span-2">
+        <div className="col-span-1 md:col-span-2">
           <p className="text-sm text-gray-500">Bio</p>
           <p className="font-semibold">Team Manager</p>
         </div>

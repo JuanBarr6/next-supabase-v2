@@ -7,7 +7,7 @@ export const AddressInfo = () => {
         <h1 className="text-black font-bold">Address</h1>
         <BtnEdit />
       </div>
-      <div className="grid grid-cols-2 gap-x-10 gap-y-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 mt-6">
         <div>
           <p className="text-sm text-gray-500">Country</p>
           <p className="font-semibold">United Kingdom</p>
