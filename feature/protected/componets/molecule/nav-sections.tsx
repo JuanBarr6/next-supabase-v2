@@ -8,7 +8,7 @@ interface NavSectionsProps {
   title: string;
 }
 
-export default async function NavSection({ Icon, title }: NavSectionsProps) {
+export default function NavSection({ Icon, title }: NavSectionsProps) {
   return (
     <Link
       className="flex items-center gap-2 px-4 py-1 rounded-sm  w-full hover:bg-primary-foreground/20 transition-colors duration-200 ease-in-out cursor-pointer"
