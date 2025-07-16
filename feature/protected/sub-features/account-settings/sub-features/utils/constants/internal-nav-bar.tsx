@@ -4,15 +4,18 @@ import { Button } from "@/components/ui/button";
 
 export default function InNavBar() {
   return (
-    <div className="w-6/6 h-full p-4 flex flex-col justify-between bg-white border-r-[2px] border-gray-200 shadow-[6px_0_10px_-4px_rgba(0,0,0,0.15)]">
-      <div className="flex flex-col gap-3 items-center text-center">
+    <div className="flex flex-row md:flex-col h-full min-w-max md:w-60 p-4 justify-between bg-white border-r-[2px] border-gray-200 shadow-[6px_0_10px_-4px_rgba(0,0,0,0.15)]">
+      <div className="flex flex-row md:flex-col gap-3 items-center md:items-start text-center md:text-left">
         {navBarSections.map(({ title, href }) => (
           <NavBarSection key={title} title={title} href={href} />
         ))}
       </div>
 
-      <div className="mt-auto flex justify-center pt-4">
-        <Button variant="ghost" className="text-red-400 font-bold">
+      <div className="md:mt-auto flex justify-center pt-4">
+        <Button
+          variant="ghost"
+          className="text-red-400 font-bold whitespace-nowrap"
+        >
           Delete Account
         </Button>
       </div>
