@@ -1,17 +1,23 @@
 import LateralNavBar from "@/feature/protected/componets/organism/lateral-nav-bar";
+import MobileDrawer from "@/feature/protected/utils/constants/drawer-mobile"; // ajusta la ruta según tu estructura
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="lg:hidden w-full h-auto">
-        <LateralNavBar />
-      </div>
+      {/* Mobile drawer trigger */}
+      <MobileDrawer />
 
-      <div className="flex flex-row w-full h-full">
+      {/* Layout principal */}
+      <div className="flex flex-row w-full h-full overflow-hidden">
+        {/* Sidebar para desktop */}
         <div className="hidden lg:flex lg:w-1/6">
           <LateralNavBar />
         </div>
-        <div className="flex flex-col w-full h-full p-8">{children}</div>
+
+        {/* Contenido */}
+        <div className="flex flex-col w-full h-full p-4 lg:p-8 overflow-auto">
+          {children}
+        </div>
       </div>
     </div>
   );
