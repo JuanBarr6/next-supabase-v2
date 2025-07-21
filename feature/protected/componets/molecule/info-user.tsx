@@ -1,23 +1,18 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { ChevronDown } from "lucide-react";
+
 interface NavSectionsProps {
-  avatar: string;
   name: string;
   role?: string;
   location?: string;
 }
 
-export default function NavSection({
-  avatar,
-  name,
-  role,
-  location,
-}: NavSectionsProps) {
+export default function NavSection({ name, role, location }: NavSectionsProps) {
   return (
     <section className="flex items-center gap-3 w-full hover:bg-primary-foreground/20 transition-colors duration-200 ease-in-out cursor-pointer p-2 rounded-md">
       <img
-        src={avatar || "/placeholder.svg"}
+        src="/hola.png"
         alt="user"
         className="rounded-full w-10 h-10 object-cover flex-shrink-0"
       />

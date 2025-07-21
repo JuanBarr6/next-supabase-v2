@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
 import { Label } from "@/components/ui/label";
-
 import Link from "next/link";
 
 interface NavSectionsProps {
@@ -8,11 +9,11 @@ interface NavSectionsProps {
   title: string;
 }
 
-export default async function NavSection({ Icon, title }: NavSectionsProps) {
+export default function NavSection({ Icon, title }: NavSectionsProps) {
   return (
     <Link
-      className="flex items-center gap-2 px-4 py-1 rounded-sm  w-full hover:bg-primary-foreground/20 transition-colors duration-200 ease-in-out cursor-pointer"
-      href={`protected/account-settings`}
+      href={`/protected/account-settings`}
+      className="flex items-center gap-2 px-4 py-1 rounded-sm w-full hover:bg-primary-foreground/20 transition-colors duration-200 ease-in-out cursor-pointer"
     >
       <Icon className="text-primary-foreground" />
       <Label className="text-primary-foreground">{title}</Label>
