@@ -1,4 +1,4 @@
-import { ListToDo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/to-do/list-to-do";
+import { ListToDo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/to-do/components/list-to-do";
 import { ColumnDef } from "@tanstack/react-table";
 
 type ToDo = {
