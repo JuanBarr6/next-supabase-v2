@@ -1,5 +1,5 @@
 import LateralNavBar from "@/feature/protected/componets/organism/lateral-nav-bar";
-import MobileDrawer from "@/feature/protected/utils/constants/drawer-mobile"; // ajusta la ruta según tu estructura
+import MobileDrawer from "@/feature/protected/componets/drawer-mobile"; // ajusta la ruta según tu estructura
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
