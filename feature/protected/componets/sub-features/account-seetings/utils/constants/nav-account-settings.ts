@@ -27,4 +27,8 @@ export const menuSectionsAccountSettings = [
     title: "Data Export",
     rute: "/protected/account-settings/data-export",
   },
+  {
+    title: "To-do",
+    rute: "/protected/account-settings/to-do",
+  },
 ];
