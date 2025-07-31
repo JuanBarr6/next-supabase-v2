@@ -38,11 +38,37 @@ export const organizationSections = [
   },
   {
     Icon: CreditCard,
-    title: "Organisations Settings",
+    title: "Organizations Settings",
   },
 ];
 
-export const userAvatar = "/placeholder.svg?height=32&width=32";
-export const userName = "Carlos";
-export const userRole = "Admin";
-export const userLocation = "Colombia, Bogotá";
+export const navBarSections = [
+  {
+    title: "My Profile",
+    href: "/protected/account-settings",
+  },
+  {
+    title: "To-do",
+    href: "/protected/account-settings/to-do",
+  },
+  {
+    title: "Teams",
+    href: "/protected/account-settings/teams",
+  },
+  {
+    title: "Team Member",
+    href: "/protected/account-settings/team-member",
+  },
+  {
+    title: "Notifications",
+    href: "/protected/account-settings/notifications",
+  },
+  {
+    title: "Billing",
+    href: "/protected/account-settings/billing",
+  },
+  {
+    title: "Data Export",
+    href: "/protected/account-settings/data-export",
+  },
+];

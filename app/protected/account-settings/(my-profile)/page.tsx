@@ -1,14 +1,20 @@
+import TopNavBar from "@/feature/protected/componets/organism/top-nav-bar";
+import Address from "@/feature/protected/sub-features/account-settings/sub-features/my-profile/components/address";
+import ProfileUser from "@/feature/protected/sub-features/account-settings/sub-features/my-profile/components/profile-user";
+import PersonalInfo from "@/feature/protected/sub-features/account-settings/sub-features/my-profile/components/personal-information";
+
 export default function MyProfile() {
   return (
-    <div className="space-y-1">
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className="h-[200px] w-[200px] bg-[#34367f] text-primary-foreground"
-        >
-          {i}
-        </div>
-      ))}
+    <div className="flex flex-col bg-background text-foreground min-h-screen">
+      <TopNavBar />
+
+      <div className="flex-1 overflow-y-auto">
+        <main className="flex flex-col space-y-4 p-4 md:p-10">
+          <ProfileUser />
+          <PersonalInfo />
+          <Address />
+        </main>
+      </div>
     </div>
   );
 }
