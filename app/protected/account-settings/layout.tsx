@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label";
+/*mport { Label } from "@/components/ui/label";
 import NavAccountSettings from "@/feature/protected/sub-features/account-settings/components/nav-account-settings";
 
 export default function AccountSettings({
@@ -16,3 +16,4 @@ export default function AccountSettings({
     </div>
   );
 }
+*/

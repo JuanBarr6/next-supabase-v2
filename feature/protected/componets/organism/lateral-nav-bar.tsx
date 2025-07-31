@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 
 import { useState } from "react";
 import NavSection from "@/feature/protected/componets/molecule/nav-sections";
@@ -99,3 +99,4 @@ export default function LateralNavBar() {
     </>
   );
 }
+*/
