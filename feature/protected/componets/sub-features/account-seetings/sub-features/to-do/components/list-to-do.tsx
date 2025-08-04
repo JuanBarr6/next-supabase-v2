@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   ColumnDef,
   flexRender,
@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Session } from "@supabase/supabase-js";
 import { createClient } from "@/utils/supabase/client";
+import { EditableCell } from "./edit-to-do";
 
 interface Task {
   id_task: number;
@@ -31,8 +32,10 @@ export function ListToDo() {
   const [task, setTask] = useState("");
   const [status, setStatus] = useState("");
   const supabase2 = createClient();
+
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
-  const [editedTask, setEditedTask] = useState<Partial<Task>>({});
+  const [editedTaskText, setEditedTaskText] = useState("");
+  const [editedTaskStatus, setEditedTaskStatus] = useState("");
 
   const fetchTasks = async (userId?: string) => {
     const { data, error } = await supabase2
@@ -95,129 +98,105 @@ export function ListToDo() {
     }
   };
 
-  const updateTask = async () => {
-    if (!editedTask.id_task) return;
-
+  const updateTask = async (id: number, newTask: string, newStatus: string) => {
     const { error } = await supabase2
       .from("to-do")
-      .update({
-        task: editedTask.task,
-        status: editedTask.status,
-      })
-      .eq("id_task", editedTask.id_task);
+      .update({ task: newTask, status: newStatus })
+      .eq("id_task", id);
 
     if (error) {
       console.error("Error al actualizar tarea:", error.message);
     } else if (session?.user.id) {
       fetchTasks(session.user.id);
       setEditingTaskId(null);
-      setEditedTask({});
     }
   };
 
-  const columns: ColumnDef<Task>[] = [
-    {
-      accessorKey: "id_task",
-      header: "id",
-    },
-    {
-      accessorKey: "task",
-      header: "Tarea",
-      cell: ({ row }) => {
-        const taskRow = row.original;
-        const isEditing = editingTaskId === taskRow.id_task;
-
-        return isEditing ? (
-          <input
-            type="text"
-            className="border p-2 rounded text-black w-full"
-            value={editedTask.task ?? ""}
-            onChange={(e) =>
-              setEditedTask((prev) => ({
-                ...prev,
-                id_task: taskRow.id_task,
-                task: e.target.value,
-              }))
-            }
-          />
-        ) : (
-          taskRow.task
-        );
+  const columns = useMemo<ColumnDef<Task>[]>(
+    () => [
+      {
+        accessorKey: "id_task",
+        header: "id",
       },
-    },
-    {
-      accessorKey: "status",
-      header: "Estado",
-      cell: ({ row }) => {
-        const taskRow = row.original;
-        const isEditing = editingTaskId === taskRow.id_task;
+      {
+        accessorKey: "task",
+        header: "Tarea",
+        cell: ({ row }) => {
+          const taskRow = row.original;
+          const isEditing = editingTaskId === taskRow.id_task;
 
-        return isEditing ? (
-          <select
-            className="border p-1 rounded w-full text-black"
-            value={editedTask.status ?? taskRow.status}
-            onChange={(e) =>
-              setEditedTask((prev) => ({
-                ...prev,
-                status: e.target.value,
-                id_task: taskRow.id_task,
-              }))
-            }
-          >
-            <option value="pendiente">Pendiente</option>
-            <option value="completada">Completada</option>
-          </select>
-        ) : (
-          taskRow.status
-        );
+          return isEditing ? (
+            <EditableCell
+              initialTask={taskRow.task}
+              initialStatus={taskRow.status}
+              id_task={taskRow.id_task}
+              updateTask={updateTask}
+              cancelEditing={() => setEditingTaskId(null)}
+            />
+          ) : (
+            taskRow.task
+          );
+        },
       },
-    },
-    {
-      id: "actions",
-      header: "Acciones",
-      cell: ({ row }) => {
-        const taskRow = row.original;
-        const isEditing = editingTaskId === taskRow.id_task;
+      {
+        accessorKey: "status",
+        header: "Estado",
+        cell: ({ row }) => {
+          const taskRow = row.original;
+          const isEditing = editingTaskId === taskRow.id_task;
 
-        return (
-          <div className="flex gap-2">
-            {isEditing ? (
-              <>
-                <Button onClick={updateTask}>Guardar</Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    setEditingTaskId(null);
-                    setEditedTask({});
-                  }}
-                >
-                  Cancelar
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setEditingTaskId(taskRow.id_task);
-                    setEditedTask(taskRow);
-                  }}
-                >
-                  Editar
-                </Button>
-                <Button
-                  variant="destructive"
-                  onClick={() => deleteTask(taskRow.id_task)}
-                >
-                  Eliminar
-                </Button>
-              </>
-            )}
-          </div>
-        );
+          return isEditing ? (
+            <select
+              className="border p-1 rounded w-full text-black"
+              value={editedTaskStatus}
+              onChange={(e) => setEditedTaskStatus(e.target.value)}
+            >
+              <option value="pendiente">Pendiente</option>
+              <option value="completada">Completada</option>
+            </select>
+          ) : (
+            taskRow.status
+          );
+        },
       },
-    },
-  ];
+      {
+        id: "actions",
+        header: "Acciones",
+        cell: ({ row }) => {
+          const taskRow = row.original;
+          const isEditing = editingTaskId === taskRow.id_task;
+
+          return (
+            <div className="flex gap-2">
+              {isEditing ? (
+                <></>
+              ) : (
+                <>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setEditingTaskId(taskRow.id_task);
+                      setEditedTaskText(taskRow.task);
+                      setEditedTaskStatus(taskRow.status);
+                    }}
+                  >
+                    Editar
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    onClick={() => deleteTask(taskRow.id_task)}
+                  >
+                    Eliminar
+                  </Button>
+                </>
+              )}
+            </div>
+          );
+        },
+      },
+    ],
+    [editingTaskId, editedTaskText, editedTaskStatus]
+  );
 
   const table = useReactTable({
     data,
