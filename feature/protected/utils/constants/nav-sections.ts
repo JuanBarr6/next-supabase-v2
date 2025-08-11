@@ -71,4 +71,8 @@ export const navBarSections = [
     title: "Data Export",
     href: "/protected/account-settings/data-export",
   },
+  {
+    title: "To Do List",
+    href: "/protected/account-settings/todo-list",
+  },
 ];
