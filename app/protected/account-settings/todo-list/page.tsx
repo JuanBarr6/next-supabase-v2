@@ -12,11 +12,10 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { validateNewTask } from "./utils/task-validations";
 
-export default function TodoList() {
+export function TodoList() {
   const {
     tasks,
     addTask,
@@ -39,7 +38,7 @@ export default function TodoList() {
   const [searchTerm, setSearchTerm] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [filterDone, setFilterDone] = useState<"all" | "done" | "not_done">(
-    "all"
+    "all",
   );
   const closeRef = useRef<HTMLButtonElement>(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -214,6 +213,8 @@ export default function TodoList() {
           handleDelete={handleDelete}
         />
       </div>
+
+      {/*<TaskDialog />*/}
     </div>
   );
 }
