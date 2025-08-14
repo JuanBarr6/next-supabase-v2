@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import Field from "@/feature/shared/components/forms/field";
 
-interface LabelFieldProps {
+interface LabelFieldProps extends React.ComponentProps<"input"> {
   controlName: string;
   title: string;
   placeholder?: string;
@@ -13,9 +13,15 @@ export default function LabelField({
   title,
   placeholder,
   description,
+  ...rest
 }: LabelFieldProps) {
   return (
-    <Field controlName={controlName} title={title} description={description}>
+    <Field
+      controlName={controlName}
+      title={title}
+      description={description}
+      {...rest}
+    >
       <Input placeholder={placeholder} />
     </Field>
   );

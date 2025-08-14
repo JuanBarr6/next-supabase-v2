@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/form";
 import { cloneElement, ReactElement } from "react";
 
-interface LabelFieldProps {
+interface LabelFieldProps extends React.ComponentProps<"input"> {
   controlName: string;
   title: string;
   placeholder?: string;
@@ -21,6 +21,7 @@ export default function Field({
   title,
   description,
   children,
+  ...rest
 }: LabelFieldProps) {
   return (
     <FormField
@@ -29,7 +30,9 @@ export default function Field({
         return (
           <FormItem>
             <FormLabel>{title}</FormLabel>
-            <FormControl>{cloneElement(children, { ...field })}</FormControl>
+            <FormControl>
+              {cloneElement(children, { ...field, ...rest })}
+            </FormControl>
             {description && <FormDescription>{description}</FormDescription>}
             <FormMessage />
           </FormItem>
