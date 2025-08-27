@@ -1,7 +1,7 @@
 "use client";
-import { UserProfile } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/my-profile/components/user-profile";
-import { PersonalInfo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/my-profile/components/personal-info";
-import { AddressInfo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/my-profile/components/address-info";
+import { UserProfile } from "@/feature/protected/sub-features/account-seetings/sub-features/my-profile/components/user-profile";
+import { PersonalInfo } from "@/feature/protected/sub-features/account-seetings/sub-features/my-profile/components/personal-info";
+import { AddressInfo } from "@/feature/protected/sub-features/account-seetings/sub-features/my-profile/components/address-info";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

@@ -9,8 +9,6 @@ import { FilterToDo } from "./filter-to-do";
 import { TableToDo } from "./table-to-do";
 import { useColumnsToDo } from "../hooks/columns-to-do";
 import CreateTaskModal from "./task-modal";
-import SelectField from "@/feature/shared/components/forms/dropdown-field";
-import TaskForm from "./task-form";
 
 interface Task {
   id_task: number;
@@ -26,7 +24,7 @@ export function ListToDo() {
   const [task, setTask] = useState("");
   const [status, setStatus] = useState("");
   const [executionDate, setExecutionDate] = useState<Date | undefined>(
-    undefined
+    undefined,
   );
   const supabase2 = createClient();
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);

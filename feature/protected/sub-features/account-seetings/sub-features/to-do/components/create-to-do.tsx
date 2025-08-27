@@ -22,7 +22,6 @@ export function CreateToDo({
   setTask,
   status,
   setStatus,
-  executionDate,
   setExecutionDate,
   errors,
   onSave,
@@ -56,7 +55,8 @@ export function CreateToDo({
 
         <Calendar22
           placeholderText="Fecha a realizar tarea"
-          onDateChange={setExecutionDate}
+          onValueChange={setExecutionDate}
+          value={undefined}
         />
         {errors.date && <p className="text-red-500 text-sm">{errors.date}</p>}
 

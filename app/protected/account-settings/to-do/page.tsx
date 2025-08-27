@@ -1,4 +1,4 @@
-import { ListToDo } from "@/feature/protected/componets/sub-features/account-seetings/sub-features/to-do/components";
+import { ListToDo } from "@/feature/protected/sub-features/account-seetings/sub-features/to-do/components";
 
 export default function ToDoPage() {
   return (

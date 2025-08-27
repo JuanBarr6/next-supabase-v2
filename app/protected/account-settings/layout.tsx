@@ -1,8 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { Label } from "@/components/ui/label";
-import AccountSettingSection from "@/feature/protected/componets/sub-features/account-seetings/components/nav-account-setting-section";
-import { menuSectionsAccountSettings } from "@/feature/protected/componets/sub-features/account-seetings/utils/constants/nav-account-settings";
+import AccountSettingSection from "@/feature/protected/sub-features/account-seetings/components/nav-account-setting-section";
+import { menuSectionsAccountSettings } from "@/feature/protected/sub-features/account-seetings/utils/constants/nav-account-settings";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";

@@ -1,6 +1,5 @@
 import { Field } from "@/feature/shared/components/forms/field";
-import { useController, useFormContext } from "react-hook-form";
-import { Calendar22 } from "@/feature/protected/componets/sub-features/account-seetings/components/calendar";
+import { Calendar22 } from "@/feature/protected/sub-features/account-seetings/components/calendar";
 
 interface LabelFieldProps {
   controlName: string;
@@ -15,14 +14,6 @@ export default function DateField({
   placeholder,
   description,
 }: LabelFieldProps) {
-  const { control } = useFormContext();
-
-  const { field } = useController({
-    name: controlName,
-    control,
-    defaultValue: undefined,
-  });
-
   return (
     <Field controlName={controlName} title={title} description={description}>
       {({ field }) => (

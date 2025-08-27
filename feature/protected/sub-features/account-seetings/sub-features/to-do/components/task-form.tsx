@@ -15,11 +15,7 @@ interface TaskFormProps {
   zIndex?: number | string;
 }
 
-export default function TaskForm({
-  onSubmit,
-  editData,
-  zIndex,
-}: TaskFormProps) {
+export default function TaskForm({ zIndex }: TaskFormProps) {
   const form = useTaskForm({
     ...taskFormDefaultValues,
   });
