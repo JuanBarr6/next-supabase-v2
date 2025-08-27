@@ -3,11 +3,14 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Session } from "@supabase/supabase-js";
 import { createClient } from "@/utils/supabase/client";
 import Loading from "../../../components/loading";
-import { validationToDo } from "../validations/validation-create-to-do";
+import { validationToDo } from "../utils/validations/validation-create-to-do";
 import { CreateToDo } from "./create-to-do";
 import { FilterToDo } from "./filter-to-do";
 import { TableToDo } from "./table-to-do";
 import { useColumnsToDo } from "../hooks/columns-to-do";
+import CreateTaskModal from "./task-modal";
+import SelectField from "@/feature/shared/components/forms/dropdown-field";
+import TaskForm from "./task-form";
 
 interface Task {
   id_task: number;
@@ -158,6 +161,9 @@ export function ListToDo() {
   if (isLoading) {
     return <Loading />;
   }
+  const handleSubmit = (values: any) => {
+    console.log("Form submitted with values:", values);
+  };
 
   return (
     <>
@@ -172,7 +178,12 @@ export function ListToDo() {
           errors={errors}
           onSave={handleSaveTask}
         />
-        <FilterToDo filterDate={filterDate} setFilterDate={setFilterDate} />
+        {/* <TaskForm onSubmit={handleSubmit} zIndex={50} /> */}
+        <div className="flex flez-row gap-3">
+          <FilterToDo filterDate={filterDate} setFilterDate={setFilterDate} />
+          <CreateTaskModal />
+        </div>
+
         <div className=" w-full max-h-[250px] overflow-y-auto border rounded">
           <TableToDo data={filteredData} columns={columns} />
         </div>

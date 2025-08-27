@@ -11,26 +11,31 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { PopoverPortal } from "@radix-ui/react-popover";
 
 interface Calendar22Props {
   placeholderText?: string;
-  onDateChange?: (date: Date | undefined) => void;
+  // onDateChange?: (date: Date | undefined) => void;
+  onValueChange?: (date: Date | undefined) => void;
+  value?: Date | undefined;
 }
 
 export function Calendar22({
   placeholderText = "Seleccionar fecha",
-  onDateChange,
+  // onDateChange,
+  onValueChange,
+  value,
 }: Calendar22Props) {
   const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  // const [date, setDate] = React.useState<Date | undefined>(undefined);
 
   const handleDateSelect = (selectedDate: Date | undefined) => {
-    setDate(selectedDate);
+    // setDate(selectedDate);
     setOpen(false);
 
-    if (onDateChange) {
-      onDateChange(selectedDate);
-    }
+    // if (onDateChange) {
+    //   onDateChange(selectedDate);
+    // }
   };
 
   return (
@@ -42,18 +47,24 @@ export function Calendar22({
             id="date"
             className="w-48 justify-between font-normal"
           >
-            {date ? date.toLocaleDateString() : placeholderText}
+            {/* {date ? date.toLocaleDateString() : placeholderText} */}
             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto overflow-hidden p-0" align="start">
-          <Calendar
-            mode="single"
-            selected={date}
-            captionLayout="dropdown"
-            onSelect={handleDateSelect}
-          />
-        </PopoverContent>
+        <PopoverPortal>
+          <PopoverContent
+            className="z-[9999] w-auto overflow-hidden p-0"
+            align="start"
+          >
+            <Calendar
+              mode="single"
+              selected={value}
+              captionLayout="dropdown"
+              onSelect={onValueChange}
+              className="z-[9999]"
+            />
+          </PopoverContent>
+        </PopoverPortal>
       </Popover>
     </div>
   );
