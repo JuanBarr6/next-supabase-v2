@@ -1,40 +1,38 @@
 "use client";
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TaskModal } from "./components/Taskmodal";
-import { TaskTable } from "./components/Tasktable";
-
-interface Task {
-  id: number;
-  name: string;
-  done: boolean;
-  date?: Date;
-}
+import TaskTable from "./components/Tasktable";
+import { Task } from "./hooks/Tasktype"; 
 
 export default function Page() {
   const [open, setOpen] = useState(false);
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  const handleSave = (task: { name: string; done: boolean; date?: Date }) => {
+  // Guardar nueva tarea
+  const handleSave = (task: Omit<Task, "id" | "user_id" | "inserted_at">) => {
     const newTask: Task = {
       id: Date.now(),
-      ...task,
+      user_id: "default-user", 
+      descripcion: task.descripcion,
+      estado: task.estado,
+      fecha_a_realizar: task.fecha_a_realizar,
+      fotos: task.fotos,
+      inserted_at: new Date(),
     };
     setTasks((prev) => [...prev, newTask]);
   };
 
-  const handleToggle = (id: number) => {
-    setTasks((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
-    );
-  };
-
+  
   const handleDelete = (id: number) => {
     setTasks((prev) => prev.filter((t) => t.id !== id));
   };
 
-  const handleEdit = (id: number, updatedTask: Partial<Task>) => {
+ 
+  const handleEdit = (
+    id: number,
+    updatedTask: Partial<Pick<Task, "descripcion" | "estado">>
+  ) => {
     setTasks((prev) =>
       prev.map((t) => (t.id === id ? { ...t, ...updatedTask } : t))
     );
@@ -49,12 +47,13 @@ export default function Page() {
 
       <TaskTable
         tasks={tasks}
-        onToggle={handleToggle}
         onDelete={handleDelete}
-        onEdit={handleEdit}
+        onEdit={(id, descripcion, estado) =>
+          handleEdit(id, { descripcion, estado })
+        }
       />
 
-      <TaskModal open={open} onOpenChange={setOpen} onSave={handleSave} />
+      <TaskModal open={open} onOpenChange={setOpen} onSaved={handleSave} />
     </main>
   );
 }

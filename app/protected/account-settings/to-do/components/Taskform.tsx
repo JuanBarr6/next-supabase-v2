@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Task } from "../hooks/Tasktype";
 import * as z from "zod";
 
 import { Input } from "@/components/ui/input";
@@ -32,7 +33,6 @@ interface TaskFormProps {
   setFilterDate: (date: Date | undefined) => void;
 }
 
-
 const formSchema = z.object({
   task: z.string().min(1, "La tarea es obligatoria"),
   status: z.enum(["pendiente", "completada"]),
@@ -58,7 +58,6 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
 
   return (
     <div>
-     
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
         <h1 className="text-2xl font-bold">Lista de Tareas</h1>
 
@@ -67,7 +66,6 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex gap-2 w-full sm:w-auto items-center flex-wrap"
           >
-            
             <FormField
               control={form.control}
               name="task"
@@ -82,7 +80,6 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
               )}
             />
 
-            
             <FormField
               control={form.control}
               name="status"
@@ -103,7 +100,6 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
               )}
             />
 
-           
             <FormField
               control={form.control}
               name="dueDate"
