@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import { useEffect, useState } from "react";
@@ -94,3 +95,4 @@ export function useTasks() {
 
   return { tasks, addTask, toggleStatus, deleteTask, editTask };
 }
+*/

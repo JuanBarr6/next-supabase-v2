@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -143,7 +144,7 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
         </Form>
       </div>
 
-      {/* Filtro por fecha */}
+      
       <div className="mb-6 flex items-center gap-2">
         <label className="font-medium">Filtrar por fecha:</label>
         <Popover>
@@ -177,3 +178,4 @@ export function TaskForm({ onAdd, filterDate, setFilterDate }: TaskFormProps) {
     </div>
   );
 }
+*/

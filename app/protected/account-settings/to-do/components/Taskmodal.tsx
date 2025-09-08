@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 
 import { useState } from "react";
 import { Task } from "../hooks/Tasktype";
@@ -151,3 +151,4 @@ export function TaskModal({ open, onOpenChange, onSaved }: TaskModalProps) {
     </Dialog>
   );
 }
+*/
